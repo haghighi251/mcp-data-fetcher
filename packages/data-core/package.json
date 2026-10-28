@@ -1,0 +1,49 @@
+{
+  "name": "@repo/data-core",
+  "version": "0.1.0",
+  "description": "MCP query-planning runtime + Redis hot-path cache + pluggable SQL/NoSQL query engine. The open core of the data-fetching framework.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./mcp/server": {
+      "types": "./dist/mcp/server.d.ts",
+      "import": "./dist/mcp/server.js"
+    }
+  },
+  "bin": {
+    "data-core-mcp": "./dist/mcp/server.js"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "mcp:server": "node dist/mcp/server.js",
+    "lint": "echo \"(configure eslint)\" && exit 0",
+    "test": "echo \"(configure vitest)\" && exit 0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "ioredis": "^5.4.1",
+    "zod": "^3.23.8"
+  },
+  "peerDependencies": {
+    "mongodb": "^6.8.0",
+    "pg": "^8.12.0"
+  },
+  "peerDependenciesMeta": {
+    "pg": { "optional": true },
+    "mongodb": { "optional": true }
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/pg": "^8.11.6",
+    "typescript": "^5.5.4"
+  }
+}

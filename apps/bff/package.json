@@ -1,0 +1,29 @@
+{
+  "name": "@repo/bff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NestJS Backend-For-Frontend consuming @repo/data-core.",
+  "type": "module",
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch",
+    "start:dev": "nest start --watch",
+    "start": "node dist/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo \"(configure eslint)\" && exit 0",
+    "test": "echo \"(configure jest)\" && exit 0"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.10",
+    "@nestjs/core": "^10.3.10",
+    "@nestjs/platform-express": "^10.3.10",
+    "@repo/data-core": "workspace:*",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.2",
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.4"
+  }
+}
